@@ -1,0 +1,49 @@
+# 8-Queens Problem using Backtracking
+
+def is_safe(board, row, col, n):
+    for r in range(row):
+        c = board[r]
+        if c == col or abs(c - col) == abs(r - row):
+            return False
+    return True
+
+def solve_n_queens(n, row=0, board=None, solutions=None):
+    if board is None:
+        board = [-1] * n
+    if solutions is None:
+        solutions = []
+
+    if row == n:
+        solutions.append(board.copy())
+        return solutions
+
+    for col in range(n):
+        if is_safe(board, row, col, n):
+            board[row] = col
+            solve_n_queens(n, row + 1, board, solutions)
+            board[row] = -1
+    return solutions
+
+def format_solution(sol):
+    n = len(sol)
+    lines = []
+    for r in range(n):
+        row = ['.'] * n
+        row[sol[r]] = 'Q'
+        lines.append(' '.join(row))
+    return lines
+
+def main():
+    n = 8
+    solutions = solve_n_queens(n)
+    print(f"Total solutions for {n}-Queens: {len(solutions)}\n")
+
+    # Show first 3 solutions only (to keep output readable)
+    for i, sol in enumerate(solutions[:3], start=1):
+        print(f"Solution #{i}:")
+        for line in format_solution(sol):
+            print(line)
+        print()
+
+if __name__ == "__main__":
+    main()

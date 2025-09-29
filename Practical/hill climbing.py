@@ -17,7 +17,7 @@ def hill_climbing(max_iterations=1000, step_size=0.1):
 
         # If neighbor is better, move there
         if neighbor_value > current_value:
-            current_x, current_value = neighbor, neighbor_value
+            current_x, current_value = neighbor, neighbor_value;
 
     return current_x, current_value
 
