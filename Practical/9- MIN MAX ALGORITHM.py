@@ -2,7 +2,7 @@ import math
 
 # Minimax Algorithm
 def minimax(depth, node_index, is_max, scores, height):
-    # Base case: leaf node is reached
+    
     if depth == height:
         return scores[node_index]
 
@@ -17,8 +17,8 @@ def minimax(depth, node_index, is_max, scores, height):
             minimax(depth + 1, node_index * 2 + 1, True, scores, height)
         )
 
-# Example usage
-scores = [3, 5, 2, 9]  # Example leaf scores
+
+scores = [3, 5, 2, 9]  
 height = math.log2(len(scores))
 
 print("The optimal value is :", minimax(0, 0, True, scores, int(height)))

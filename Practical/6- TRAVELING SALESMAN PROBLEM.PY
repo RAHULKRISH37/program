@@ -23,7 +23,7 @@ def travelling_salesman_brute_force(graph, start):
     return best_route, min_path
 
 
-# Example: Distance Matrix (Graph)
+
 graph = [
     [0, 10, 15, 20],
     [10, 0, 35, 25],

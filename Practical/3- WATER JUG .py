@@ -4,7 +4,7 @@ def water_jug_bfs(m, n, d):
     visited = set()
     queue = deque()
     
-    # Start state (0,0)
+    
     queue.append((0, 0))
     visited.add((0, 0))
     
@@ -12,12 +12,12 @@ def water_jug_bfs(m, n, d):
         a, b = queue.popleft()
         print(f"Jug1: {a}, Jug2: {b}")
         
-        # If target found
+        
         if a == d or b == d:
             print("Target achieved!")
             return True
         
-        # All possible next states
+        
         next_states = [
             (m, b),   # Fill Jug1
             (a, n),   # Fill Jug2
@@ -38,5 +38,5 @@ def water_jug_bfs(m, n, d):
     return False
 
 
-# Example run
+
 water_jug_bfs(4, 3, 2)
