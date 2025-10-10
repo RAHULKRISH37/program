@@ -1,0 +1,32 @@
+# Python program to generate a simple HTML blog page demonstrating anchor and title tags
+
+# HTML content
+html_content = """
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Sample Web Blog</title>
+</head>
+<body>
+    <h1>Welcome to My Blog</h1>
+    <h2>Introduction</h2>
+    <p>This is a sample blog page created to demonstrate basic HTML tags using Python.</p>
+    
+    <h2>Useful Links</h2>
+    <p>Check out these websites:</p>
+    <ul>
+        <li><a href="https://www.python.org" target="_blank">Python Official Website</a></li>
+        <li><a href="https://wordpress.com" target="_blank">WordPress Website</a></li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>This concludes our simple blog demonstration of anchor tags, title tags, headings, and paragraphs.</p>
+</body>
+</html>
+"""
+
+# Save to an HTML file
+with open("sample_blog.html", "w") as file:
+    file.write(html_content)
+
+print("HTML blog page generated successfully: sample_blog.html")
